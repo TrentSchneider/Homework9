@@ -20,6 +20,24 @@ const questions = [
     }
   },
   {
+    type: "list",
+    name: "needLink",
+    message: "Does your project have a link to where it is deployed?",
+    choices: ["Yes", "No"]
+  },
+  {
+    type: "input",
+    name: "link",
+    message: "Please type the URL where the project is deployed: ",
+    when: answers => answers.needLink === "Yes",
+    validate: answer => {
+      if (answer !== "") {
+        return true;
+      }
+      return "Please make sure a URL is entered.";
+    }
+  },
+  {
     type: "input",
     name: "description",
     message: "Please type a description of your project: ",
@@ -69,6 +87,21 @@ const questions = [
     type: "list",
     name: "license",
     message: "Which license does your project use? ",
+    choices: [
+      "Apache License 2.0",
+      "GNU General Public License v3.0",
+      "MIT License",
+      "BSD 2-Clause 'Simplified' License",
+      "BSD 3-Clause 'New' or 'Revised' License",
+      "Boost Software License 1.0",
+      "Creative Commons Zero v1.0 Universal",
+      "Eclipse Public License 2.0",
+      "GNU Affero General Public License v3.0",
+      "GNU General Public License v2.0",
+      "GNU Lesser General Public License v2.1",
+      "Mozilla Public License 2.0",
+      "The Unlicense"
+    ],
     when: answers => answers.needLicense === "Yes"
   },
   {
@@ -84,7 +117,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "testing",
+    name: "tests",
     message: "Please enter testing instructions: ",
     validate: answer => {
       if (answer !== "") {
@@ -126,7 +159,10 @@ function writeToFile(data) {
 }
 
 // function to initialize program
-function init() {}
+function init() {
+  inquirer.prompt(questions).then(data => writeToFile(data));
+}
 
 // function call to initialize program
+console.clear();
 init();
