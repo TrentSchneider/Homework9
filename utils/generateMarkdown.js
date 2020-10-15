@@ -1,41 +1,46 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  const tocLic,
-  secLic;
+  let tocLic = "",
+    secLic = "",
+    linkLic = "",
+    link = "";
   if (data.needLicense === "Yes") {
-    tocLic = "[License](#lic)";
-    secLic = `<a id="lic"></a>
-    ## License
-    `
+    tocLic = "3. [License](#lic)";
+    linkLic = '<a id="lic"></a>';
+    secLic = "## 3. License";
+  }
+  if (data.needLink === "Yes") {
+    link = data.link;
   }
   return `# ${data.title}
-${data.link}
+${link}
 ## Description 
 ${data.description}
 
-[Installation](#inst)
-[Usage](#use)
+1. [Installation](#inst)
+2. [Usage](#use)
 ${tocLic}
-[Contributing](#cont)
-[Tests](#tes)
-[Questions](#ques)
+4. [Contributing](#cont)
+5. [Tests](#tes)
+6. [Questions](#ques)
 
 <a id="inst"></a>
 ## Installation
 ${data.installation}
 <a id="use"></a>
-## Usage
+## 1. Usage
 ${data.usage}
+${linkLic}
 ${secLic}
 ${data.license}
 <a id="cont"></a>
-## Contributing
+## 2. Contributing
 ${data.contributing}
 <a id="tes"></a>
-## Tests
+## 4. Tests
 ${data.tests}
 <a id="ques"></a>
-## Questions
+## 5. Questions
 If you have any questions you can reach me on [GitHub](https://github.com/${data.github}) or via [email](mailto:${data.email}).
 `;
 }
