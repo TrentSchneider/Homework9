@@ -82,19 +82,19 @@ ${tocLic}
 ## Installation
 ${data.installation}
 <a id="use"></a>
-## 1. Usage
+## Usage
 ${data.usage}
 ${linkLic}
 ${secLic}
 ${badge}
 <a id="cont"></a>
-## 2. Contributing
+## Contributing
 ${data.contributing}
 <a id="tes"></a>
-## 4. Tests
+## Tests
 ${data.tests}
 <a id="ques"></a>
-## 5. Questions
+## Questions
 If you have any questions you can reach me on [GitHub](https://github.com/${data.github}) or via [email](mailto:${data.email}).
 `;
 }
