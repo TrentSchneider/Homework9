@@ -24,4 +24,4 @@ To run the app, the user needs to run 'node index' from the root directory of th
 <a id="cred"></a>
 ## Credits
 
-All code was created by Trenton Schneider. You can find Trenton's work on Gihub at https://github.com/TrentSchneider
+All code was created by Trenton Schneider. You can find Trenton's work on [GitHub](https://github.com/TrentSchneider)
