@@ -4,9 +4,11 @@ See video demo [here](https://drive.google.com/file/d/1XuVkMCNnqyJCYbNafSESwbxIb
 
 ## Description
 
-[Installation](#inst)
-[Usage](#use)
-[Credits](#cred)
+This is a JS CLI app that will generate a Readme file based off of the user's responses to question prompts.
+
+* [Installation](#inst)
+* [Usage](#use)
+* [Credits](#cred)
 
 
 <a id="inst"></a>
